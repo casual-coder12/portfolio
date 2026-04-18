@@ -16,7 +16,7 @@ export const t = {
     about: {
       title: "Upoznajte me",
       subtitle: "Edukacija i Iskustvo",
-      p1: `Trenutno sam student <strong>doktorskih studija na Fizičkom fakultetu</strong> u Beogradu (smer Fizika jonizovanog gasa i plazme), gde sve ispite polažem sa <strong>prosekom 10.00</strong>. Moje osnovne i master studije takođe krasi visok prosek i duboko razumevanje fundamentalnih koncepata.`,
+      p1: `Student <strong>doktorskih studija na Fizičkom fakultetu</strong> u Beogradu (smer Fizika jonizovanog gasa i plazme), gde sve ispite polažem sa <strong>prosekom 10.00</strong>. Moje osnovne i master studije takođe krasi visok prosek i duboko razumevanje fundamentalnih koncepata.`,
       p2: `Četiri godine sam radio kao <strong>istraživač pripravnik na Institutu za fiziku</strong> u Beogradu, baveći se razvojem <i>Monte Carlo</i> simulacija i modelovanjem za različite gasove. Od 2022. godine gradim put kao <strong>Freelance Software Developer</strong>, implementirajući web rešenja i napredne analize podataka, spajajući naučnu preciznost sa modernim inženjerstvom softvera.`
     },
     projects: {
@@ -75,7 +75,7 @@ export const t = {
     about: {
       title: "Get to know me",
       subtitle: "Education & Experience",
-      p1: `I am currently a <strong>PhD student at the Faculty of Physics</strong> in Belgrade (Physics of Ionized Gases and Plasma), maintaining a perfect <strong>GPA of 10.00</strong>. My Bachelor's and Master's studies are also marked by high grades and a deep understanding of fundamental concepts.`,
+      p1: `I am a <strong>PhD student at the Faculty of Physics</strong> in Belgrade (Physics of Ionized Gases and Plasma), maintaining a perfect <strong>GPA of 10.00</strong>. My Bachelor's and Master's studies are also marked by high grades and a deep understanding of fundamental concepts.`,
       p2: `I worked for four years as a <strong>Research Trainee at the Institute of Physics</strong> in Belgrade, focusing on the development of <i>Monte Carlo</i> simulations and modeling for various gases. Since 2022, I've been working as a <strong>Freelance Software Developer</strong>, implementing web solutions and advanced data analytics, merging scientific rigor with modern software engineering.`
     },
     projects: {
