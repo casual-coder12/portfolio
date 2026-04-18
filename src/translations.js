@@ -27,7 +27,7 @@ export const t = {
           title: "Monte Karlo Simulacije Pozitrona",
           description: "Razvoj robusnih Monte Carlo algoritama za simulaciju termalizacije pozitrona u Penning-Malmberg-Surko trapovima. Proračuni efikasnih preseka elektrona i pozitrona u različitim gasovima za dublja naučna istraživanja.",
           tags: ["C++", "Python", "MATLAB", "Monte Carlo", "Data Analysis", "Physics"],
-          posters: ["/SPIG_poster_2018.jpg", "/POSMOL_poster_2019.jpg"]
+          posters: ["SPIG_poster_2018.jpg", "POSMOL_poster_2019.jpg"]
         },
         {
           title: "Simulacije Granularnih Gasova",
@@ -86,7 +86,7 @@ export const t = {
           title: "Monte Carlo Positron Simulations",
           description: "Development of robust Monte Carlo algorithms simulating positron thermalization in Penning-Malmberg-Surko traps. Calculation of complete sets of positron and electron cross-sections in various gases.",
           tags: ["C++", "Python", "MATLAB", "Monte Carlo", "Data Analysis", "Physics"],
-          posters: ["/SPIG_poster_2018.jpg", "/POSMOL_poster_2019.jpg"]
+          posters: ["SPIG_poster_2018.jpg", "POSMOL_poster_2019.jpg"]
         },
         {
           title: "Granular Gas Cooling Simulations",
