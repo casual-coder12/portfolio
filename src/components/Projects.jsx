@@ -29,14 +29,16 @@ export default function Projects() {
               </div>
             </div>
             <div className="project-actions">
-              {project.posters ? (
+              {project.posters && (
                 <button 
                   className="btn-primary" 
                   onClick={() => setActivePosters(project.posters)}
                 >
                   {content.btnDetails}
                 </button>
-              ) : (
+              )}
+              {/* 
+              !project.posters && (
                 <a 
                   href={project.link} 
                   className="btn-primary"
@@ -45,7 +47,8 @@ export default function Projects() {
                 >
                   {content.btnDetails}
                 </a>
-              )}
+              )
+              */}
             </div>
           </div>
         ))}
