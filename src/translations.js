@@ -20,7 +20,7 @@ export const t = {
       p2: `Četiri godine sam radio kao <strong>istraživač pripravnik na Institutu za fiziku</strong> u Beogradu, baveći se razvojem <i>Monte Carlo</i> simulacija i modelovanjem za različite gasove. Od 2022. godine gradim put kao <strong>Freelance Software Developer</strong>, implementirajući web rešenja i napredne analize podataka, spajajući naučnu preciznost sa modernim inženjerstvom softvera.`
     },
     projects: {
-      title: "Odabrani Radovi",
+      title: "Izdvojeni Projekti",
       btnDetails: "Detaljnije ➔",
       items: [
         {
