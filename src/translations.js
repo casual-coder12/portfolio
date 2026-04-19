@@ -53,7 +53,11 @@ export const t = {
         namePh: "Unesite ime",
         emailPh: "Unesite email adrese",
         messagePh: "Kako mogu da vam pomognem?",
-        btnSubmit: "Pošalji Poruku"
+        btnSubmit: "Pošalji Poruku",
+        btnSending: "Slanje...",
+        success: "Poruka je uspešno poslata!",
+        error: "Došlo je do greške prilikom slanja poruke.",
+        recaptchaError: "Molimo vas potvrdite da niste robot."
       }
     },
     footer: "Sva prava zadržana."
@@ -112,7 +116,11 @@ export const t = {
         namePh: "Enter your name",
         emailPh: "Enter your email",
         messagePh: "How can I help you?",
-        btnSubmit: "Send Message"
+        btnSubmit: "Send Message",
+        btnSending: "Sending...",
+        success: "Message sent successfully!",
+        error: "An error occurred while sending the message.",
+        recaptchaError: "Please verify that you are not a robot."
       }
     },
     footer: "All rights reserved."
