@@ -20,7 +20,7 @@ export default function Contact() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    
+
     const recaptchaValue = recaptchaRef.current.getValue();
     if (!recaptchaValue) {
       setRecaptchaError(true);
@@ -41,16 +41,16 @@ export default function Contact() {
 
     emailjs.sendForm(serviceId, templateId, form.current, publicKey)
       .then(() => {
-          setIsSending(false);
-          setSubmitStatus('success');
-          form.current.reset();
-          recaptchaRef.current.reset();
-          setTimeout(() => setSubmitStatus(null), 5000);
+        setIsSending(false);
+        setSubmitStatus('success');
+        form.current.reset();
+        recaptchaRef.current.reset();
+        setTimeout(() => setSubmitStatus(null), 5000);
       }, (error) => {
-          setIsSending(false);
-          setSubmitStatus('error');
-          console.error('EmailJS Error:', error);
-          setTimeout(() => setSubmitStatus(null), 5000);
+        setIsSending(false);
+        setSubmitStatus('error');
+        console.error('EmailJS Error:', error);
+        setTimeout(() => setSubmitStatus(null), 5000);
       });
   };
 
@@ -62,23 +62,19 @@ export default function Contact() {
           <p>{content.text}</p>
           <div className="contact-details">
             <div className="contact-item">
-              <span className="icon">📧</span>
-              <a href="mailto:87vladan@gmail.com">87vladan@gmail.com</a>
-            </div>
-            <div className="contact-item">
               <span className="icon">💼</span>
-              <a href="#" target="_blank" rel="noreferrer">LinkedIn Profil</a>
+              <a href="https://www.linkedin.com/in/vladan-simi%C4%87-0b5b17268/" target="_blank" rel="noreferrer">LinkedIn Profil</a>
             </div>
             <div className="contact-item">
               <span className="icon">🐙</span>
-              <a href="#" target="_blank" rel="noreferrer">GitHub Profil</a>
+              <a href="https://github.com/casual-coder12" target="_blank" rel="noreferrer">GitHub Profil</a>
             </div>
           </div>
         </div>
-        
+
         <form ref={form} className="contact-form" onSubmit={sendEmail}>
           <input type="hidden" name="submit_time" ref={submitTimeRef} />
-          
+
           <div className="form-group">
             <label htmlFor="name">{content.labels.name}</label>
             <input type="text" name="user_name" id="name" placeholder={content.labels.namePh} required />
@@ -91,7 +87,7 @@ export default function Contact() {
             <label htmlFor="message">{content.labels.message}</label>
             <textarea id="message" name="message" rows="5" placeholder={content.labels.messagePh} required></textarea>
           </div>
-          
+
           <div className="form-group recaptcha-group" style={{ marginBottom: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
             <ReCAPTCHA
               ref={recaptchaRef}
@@ -109,7 +105,7 @@ export default function Contact() {
           <button type="submit" className="btn-primary w-100" disabled={isSending}>
             {isSending ? content.labels.btnSending : content.labels.btnSubmit}
           </button>
-          
+
           {submitStatus === 'success' && (
             <div className="form-success" style={{ color: '#4CAF50', marginTop: '1rem', textAlign: 'center', fontWeight: '500' }}>
               {content.labels.success}
