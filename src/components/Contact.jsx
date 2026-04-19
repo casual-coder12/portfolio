@@ -12,6 +12,7 @@ export default function Contact() {
   const content = t[language].contact;
   const form = useRef();
   const recaptchaRef = useRef();
+  const submitTimeRef = useRef();
 
   const [isSending, setIsSending] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
@@ -26,6 +27,10 @@ export default function Contact() {
       return;
     }
     setRecaptchaError(false);
+
+    if (submitTimeRef.current) {
+      submitTimeRef.current.value = new Date().toLocaleString('sr-RS');
+    }
 
     setIsSending(true);
     setSubmitStatus(null);
@@ -72,6 +77,8 @@ export default function Contact() {
         </div>
         
         <form ref={form} className="contact-form" onSubmit={sendEmail}>
+          <input type="hidden" name="submit_time" ref={submitTimeRef} />
+          
           <div className="form-group">
             <label htmlFor="name">{content.labels.name}</label>
             <input type="text" name="user_name" id="name" placeholder={content.labels.namePh} required />
