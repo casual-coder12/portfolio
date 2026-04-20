@@ -16,7 +16,7 @@ export const t = {
     about: {
       title: "Upoznajte me",
       subtitle: "Edukacija i Iskustvo",
-      p1: `Upisao <strong>završnu godinu na doktorskim studijama</strong> na Fizičkom fakultetu, Univerziteta u Beogradu (smer Fizika jonizovanog gasa i plazme) i položio <strong>sve neophodne ispite sa prosekom 10</strong>. Moje osnovne i master studije takođe krasi visok prosek i duboko razumevanje fundamentalnih koncepata.`,
+      p1: `Upisao sam <strong>završnu godinu na doktorskim studijama</strong> na Fizičkom fakultetu, Univerziteta u Beogradu (smer Fizika jonizovanog gasa i plazme) i položio <strong>sve neophodne ispite sa prosekom 10</strong>. Moje osnovne i master studije takođe krasi visok prosek i duboko razumevanje fundamentalnih koncepata.`,
       p2: `Četiri godine sam radio kao <strong>istraživač pripravnik na Institutu za fiziku</strong> u Beogradu, baveći se razvojem <i>Monte Carlo</i> simulacija i modelovanjem za različite gasove. Od 2022. godine gradim put kao <strong>Freelance Software Developer</strong>, implementirajući web rešenja i napredne analize podataka, spajajući naučnu preciznost sa modernim inženjerstvom softvera.`
     },
     projects: {
