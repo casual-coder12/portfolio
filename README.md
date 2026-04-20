@@ -53,9 +53,15 @@ To get a local copy up and running, follow these simple steps.
 
 ## 🤖 Acknowledgments & Development Process
 
-This project was initially scaffolded and developed in collaboration with the **Antigravity AI Agent** (developed by Google DeepMind), leveraging advanced agentic coding to build a strong architectural foundation, UI design systems, and rapid component setup.
+This project was developed with the assistance of AI coding agents:
 
-Following the AI-assisted foundational work, extensive **personal additions, logic refinements, and custom interactive features** were implemented manually to fully tailor the application to my precise professional needs and standards.
+- **Initial Development:** The foundational architecture and UI design system were scaffolded using **Antigravity AI Agent** (Google DeepMind), which provided rapid component setup and core structure.
+
+- **Personal Customization:** Extensive manual refinements, business logic, content personalization, and feature integration were added to align the application with professional requirements and standards.
+
+- **Enhancements & Refinements:** Some features and improvements were implemented with **Cline** (Anthropic Claude).
+
+This hybrid approach combined AI-assisted development with hands-on customization, demonstrating the effective collaboration between human expertise and AI tooling in modern software development.
 
 ---
 *If you found this project helpful, feel free to inspect the source code!*

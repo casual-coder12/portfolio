@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '../LanguageContext';
 import { t } from '../translations';
 import './Projects.css';
@@ -15,6 +15,18 @@ export default function Projects() {
   const [activePosters, setActivePosters] = useState(null);
   const content = t[language].projects;
   const projects = content.items;
+
+  // Close modal with ESC key
+  useEffect(() => {
+    const handleEscKey = (event) => {
+      if (event.key === 'Escape' && activePosters) {
+        setActivePosters(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleEscKey);
+    return () => window.removeEventListener('keydown', handleEscKey);
+  }, [activePosters]);
 
   return (
     <section id="projects" className="projects-section container">
@@ -64,7 +76,7 @@ export default function Projects() {
       {activePosters && (
         <div className="posters-modal" onClick={() => setActivePosters(null)}>
           <div className="posters-modal-content" onClick={e => e.stopPropagation()}>
-            <button className="close-modal-btn" onClick={() => setActivePosters(null)}>✖ Zatvori</button>
+            <button className="close-modal-btn" onClick={() => setActivePosters(null)}>✖ {t[language].close}</button>
             <div className="posters-container">
               {activePosters.map((poster, index) => (
                 poster.toLowerCase().endsWith('.jpg') || poster.toLowerCase().endsWith('.png') ? (

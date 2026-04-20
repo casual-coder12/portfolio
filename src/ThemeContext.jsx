@@ -14,7 +14,11 @@ export const useTheme = () => useContext(ThemeContext);
  * which drives CSS variable updates for different color schemes.
  */
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('midnight-purple'); // default theme
+  // Load theme from localStorage if available, otherwise default to 'midnight-purple'
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    return savedTheme || 'midnight-purple';
+  });
 
   // Define available theme palettes
   const themes = [
@@ -27,10 +31,12 @@ export const ThemeProvider = ({ children }) => {
   // Update the data-theme attribute on the root element whenever the theme changes
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('portfolio-theme', theme);
   }, [theme]);
 
   /**
    * Changes the active theme to the given theme ID.
+   * Also persists the selection to localStorage.
    * @param {string} newTheme - The ID of the theme to switch to.
    */
   const changeTheme = (newTheme) => {

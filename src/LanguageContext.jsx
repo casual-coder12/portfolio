@@ -14,13 +14,22 @@ export const useLanguage = () => useContext(LanguageContext);
  */
 export const LanguageProvider = ({ children }) => {
   // State for the currently selected language
-  const [language, setLanguage] = useState('sr'); // 'sr' ili 'en'
+  // Load from localStorage if available, otherwise default to 'sr'
+  const [language, setLanguage] = useState(() => {
+    const savedLanguage = localStorage.getItem('portfolio-language');
+    return savedLanguage || 'sr';
+  });
 
   /**
    * Toggles the active language between Serbian ('sr') and English ('en').
+   * Also persists the selection to localStorage.
    */
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'sr' ? 'en' : 'sr');
+    setLanguage(prev => {
+      const newLang = prev === 'sr' ? 'en' : 'sr';
+      localStorage.setItem('portfolio-language', newLang);
+      return newLang;
+    });
   };
 
   return (

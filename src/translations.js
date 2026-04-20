@@ -22,6 +22,7 @@ export const t = {
     projects: {
       title: "Izdvojeni Projekti",
       btnDetails: "Detaljnije ➔",
+      close: "Zatvori",
       items: [
         {
           title: "Monte Karlo Simulacije Pozitrona",
@@ -85,6 +86,7 @@ export const t = {
     projects: {
       title: "Selected Projects",
       btnDetails: "Details ➔",
+      close: "Close",
       items: [
         {
           title: "Monte Carlo Positron Simulations",
