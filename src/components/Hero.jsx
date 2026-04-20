@@ -2,6 +2,10 @@ import { useLanguage } from '../LanguageContext';
 import { t } from '../translations';
 import './Hero.css';
 
+/**
+ * Hero component serves as the landing section of the portfolio.
+ * Displays a personalized greeting, professional role, and primary call-to-action buttons.
+ */
 export default function Hero() {
   const { language } = useLanguage();
   const content = t[language].hero;

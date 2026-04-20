@@ -3,6 +3,10 @@ import { useLanguage } from '../LanguageContext';
 import { t } from '../translations';
 import './ThemeSwitcher.css';
 
+/**
+ * ThemeSwitcher component allows users to change the global color scheme of the application.
+ * Maps over available themes from ThemeContext to generate selectable options dynamically.
+ */
 export default function ThemeSwitcher() {
   const { theme, themes, changeTheme } = useTheme();
   const { language } = useLanguage();

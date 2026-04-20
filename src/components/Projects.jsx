@@ -3,8 +3,15 @@ import { useLanguage } from '../LanguageContext';
 import { t } from '../translations';
 import './Projects.css';
 
+/**
+ * Projects component displays a grid of professional or academic projects.
+ * Supports viewing detailed posters/images through a modal overlay.
+ */
 export default function Projects() {
   const { language } = useLanguage();
+  
+  // State for controlling the posters modal. 
+  // Null means closed, array of image/iframe URLs means open.
   const [activePosters, setActivePosters] = useState(null);
   const content = t[language].projects;
   const projects = content.items;
@@ -29,14 +36,16 @@ export default function Projects() {
               </div>
             </div>
             <div className="project-actions">
-              {project.posters ? (
+              {project.posters && (
                 <button 
                   className="btn-primary" 
                   onClick={() => setActivePosters(project.posters)}
                 >
                   {content.btnDetails}
                 </button>
-              ) : (
+              )}
+              {/* 
+              !project.posters && (
                 <a 
                   href={project.link} 
                   className="btn-primary"
@@ -45,7 +54,8 @@ export default function Projects() {
                 >
                   {content.btnDetails}
                 </a>
-              )}
+              )
+              */}
             </div>
           </div>
         ))}
