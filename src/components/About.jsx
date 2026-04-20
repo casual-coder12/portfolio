@@ -2,6 +2,10 @@ import { useLanguage } from '../LanguageContext';
 import { t } from '../translations';
 import './About.css';
 
+/**
+ * About component displays a brief professional biography and a list of technical skills.
+ * The textual content automatically adjusts based on the selected language.
+ */
 export default function About() {
   const { language } = useLanguage();
   const content = t[language].about;

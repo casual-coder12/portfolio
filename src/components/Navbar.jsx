@@ -3,6 +3,10 @@ import { useLanguage } from '../LanguageContext';
 import { t } from '../translations';
 import './Navbar.css';
 
+/**
+ * Navbar component provides primary page navigation.
+ * Includes anchor links to specific page sections and a global language toggle control.
+ */
 export default function Navbar() {
   const { theme, themes, changeTheme } = useTheme();
   const { language, toggleLanguage } = useLanguage();

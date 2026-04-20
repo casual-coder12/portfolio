@@ -97,6 +97,33 @@
   width: 100%;
 }
 
+.recaptcha-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.error-text {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.form-success {
+  color: #4CAF50;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.form-error {
+  color: #ff6b6b;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
+}
+
 @media (max-width: 900px) {
   .contact-container {
     grid-template-columns: 1fr;

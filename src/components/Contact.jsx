@@ -6,18 +6,31 @@ import './Contact.css';
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from 'react-google-recaptcha';
 
+/**
+ * Contact component handles user inquiries using EmailJS and reCAPTCHA for spam prevention.
+ * It provides a form for users to send messages directly to the configured email address.
+ */
 export default function Contact() {
   const { language } = useLanguage();
   const { theme } = useTheme();
   const content = t[language].contact;
+
+  // References to form elements and third-party components
   const form = useRef();
   const recaptchaRef = useRef();
   const submitTimeRef = useRef();
 
+  // State variables for tracking form submission progress and outcome
   const [isSending, setIsSending] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
   const [recaptchaError, setRecaptchaError] = useState(false);
 
+  /**
+   * Handles the form submission event.
+   * Validates reCAPTCHA, records submission time, and dispatches the email via EmailJS.
+   * 
+   * @param {React.FormEvent} e - The form submission event
+   */
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -88,7 +101,7 @@ export default function Contact() {
             <textarea id="message" name="message" rows="5" placeholder={content.labels.messagePh} required></textarea>
           </div>
 
-          <div className="form-group recaptcha-group" style={{ marginBottom: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+          <div className="form-group recaptcha-group">
             <ReCAPTCHA
               ref={recaptchaRef}
               sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "YOUR_RECAPTCHA_SITE_KEY_HERE"}
@@ -96,7 +109,7 @@ export default function Contact() {
               onChange={() => setRecaptchaError(false)}
             />
             {recaptchaError && (
-              <span className="error-text" style={{ color: '#ff6b6b', fontSize: '0.85rem', marginTop: '0.5rem' }}>
+              <span className="error-text">
                 {content.labels.recaptchaError}
               </span>
             )}
@@ -107,12 +120,12 @@ export default function Contact() {
           </button>
 
           {submitStatus === 'success' && (
-            <div className="form-success" style={{ color: '#4CAF50', marginTop: '1rem', textAlign: 'center', fontWeight: '500' }}>
+            <div className="form-success">
               {content.labels.success}
             </div>
           )}
           {submitStatus === 'error' && (
-            <div className="form-error" style={{ color: '#ff6b6b', marginTop: '1rem', textAlign: 'center', fontWeight: '500' }}>
+            <div className="form-error">
               {content.labels.error}
             </div>
           )}

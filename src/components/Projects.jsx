@@ -3,8 +3,15 @@ import { useLanguage } from '../LanguageContext';
 import { t } from '../translations';
 import './Projects.css';
 
+/**
+ * Projects component displays a grid of professional or academic projects.
+ * Supports viewing detailed posters/images through a modal overlay.
+ */
 export default function Projects() {
   const { language } = useLanguage();
+  
+  // State for controlling the posters modal. 
+  // Null means closed, array of image/iframe URLs means open.
   const [activePosters, setActivePosters] = useState(null);
   const content = t[language].projects;
   const projects = content.items;

@@ -9,6 +9,10 @@ import { useLanguage } from './LanguageContext';
 import { t } from './translations';
 import './App.css'
 
+/**
+ * Main application component that assembles the page layout.
+ * Renders the Navigation, Hero, About, Projects, Contact sections, and Footer.
+ */
 function App() {
   const { language } = useLanguage();
   return (
