@@ -28,41 +28,61 @@ export default function Contact() {
   /**
    * Handles the form submission event.
    * Validates reCAPTCHA, records submission time, and dispatches the email via EmailJS.
-   * 
-   * @param {React.FormEvent} e - The form submission event
    */
   const sendEmail = (e) => {
+    // 1. Prevent the default browser behavior of refreshing the page upon form submission
     e.preventDefault();
 
+    // 2. Extract the current value/token from the reCAPTCHA widget
     const recaptchaValue = recaptchaRef.current.getValue();
+    
+    // 3. Verify if the user has successfully solved the reCAPTCHA challenge
     if (!recaptchaValue) {
+      // If no token exists, display the reCAPTCHA error message and abort the submission
       setRecaptchaError(true);
       return;
     }
+    // Clear any previous reCAPTCHA errors if the challenge was successful
     setRecaptchaError(false);
 
+    // 4. Capture the exact local time of submission as a hidden form field 
+    // Format is tailored to Serbian locale ('sr-RS')
     if (submitTimeRef.current) {
       submitTimeRef.current.value = new Date().toLocaleString('sr-RS');
     }
 
+    // 5. Update UI state to reflect the network request is in progress
+    // This disables the submit button to prevent duplicate submissions
     setIsSending(true);
-    setSubmitStatus(null);
+    setSubmitStatus(null); // Clear any previous submission status
 
+    // 6. Retrieve EmailJS credentials securely stored in environment variables (Vite requires VITE_ prefix)
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '';
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
 
+    // 7. Dispatch the actual email payload to EmailJS servers
+    // We pass the referenced 'form.current' rather than raw state variables,
+    // allowing EmailJS to automatically map 'name' attributes from HTML inputs to the email template
     emailjs.sendForm(serviceId, templateId, form.current, publicKey)
       .then(() => {
+        // --- Success Handler ---
         setIsSending(false);
-        setSubmitStatus('success');
+        setSubmitStatus('success'); // Triggers the success UI banner
+        
+        // Reset the form inputs and reCAPTCHA widget for potential future submissions
         form.current.reset();
         recaptchaRef.current.reset();
+        
+        // Automatically hide the success banner after 5 seconds
         setTimeout(() => setSubmitStatus(null), 5000);
       }, (error) => {
+        // --- Error Handler ---
         setIsSending(false);
-        setSubmitStatus('error');
-        console.error('EmailJS Error:', error);
+        setSubmitStatus('error'); // Triggers the error UI banner
+        console.error('EmailJS Error:', error); // Log exact API failure for technical debugging
+        
+        // Automatically hide the error banner after 5 seconds
         setTimeout(() => setSubmitStatus(null), 5000);
       });
   };
