@@ -96,7 +96,7 @@ export default function Contact() {
           <div className="contact-details">
             <div className="contact-item">
               <span className="icon">💼</span>
-              <a href="https://www.linkedin.com/in/vladan-simi%C4%87-0b5b17268/" target="_blank" rel="noreferrer">LinkedIn Profil</a>
+              <a href="https://www.linkedin.com/in/vladan-simic-rs/" target="_blank" rel="noreferrer">LinkedIn Profil</a>
             </div>
             <div className="contact-item">
               <span className="icon">🐙</span>
